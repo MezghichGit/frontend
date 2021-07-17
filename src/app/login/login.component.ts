@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -23,10 +23,13 @@ export class LoginComponent implements OnInit {
 
   checkLogin() {
 
-    if (this.loginservice.authenticate(this.username, this.password)==true) {
-     this.router.navigate(['/listProvider'])
-    } else
-    this.invalidLogin = true
+    this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate(['/listProvider']);
+        this.invalidLogin = true;
+      },
+      error => { this.invalidLogin = true }
+    )
   }
 
 }
