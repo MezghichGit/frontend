@@ -34,7 +34,7 @@ export class ProviderService {
   }
 
   deleteProvider(myObj: any) {
-    return this.Http.delete(this.urlProviders + '/' + myObj['id'], myObj)
+    return this.Http.delete(this.urlProviders + '/' + myObj['id'])
   }
 
   getProvider(id: any) {
