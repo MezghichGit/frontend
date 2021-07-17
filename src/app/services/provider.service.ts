@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProviderService {
 
-  urlProviders = 'http://127.0.0.1:8080/providers';
+  //Mode dev
+  //urlProviders = 'http://127.0.0.1:8080/providers';
 
+  //Mode prod
+  //urlProviders = 'http://www.backend.com/providers';
 
   provider: any;
 
@@ -15,7 +19,7 @@ export class ProviderService {
 
 
   listProviders() {
-    return this.Http.get(this.urlProviders + '/list');
+    return this.Http.get(environment.urlProviders + '/list');
   }
 
 
@@ -25,19 +29,19 @@ export class ProviderService {
       'email': myform.value.providerEmail,
       'address': myform.value.providerAdress
     }
-    return this.Http.post(this.urlProviders + '/add', this.provider);
+    return this.Http.post(environment.urlProviders + '/add', this.provider);
   }
 
 
   updateProvider(myObj: any) {
-    return this.Http.put(this.urlProviders + '/' + myObj['id'], myObj);
+    return this.Http.put(environment.urlProviders + '/' + myObj['id'], myObj);
   }
 
   deleteProvider(myObj: any) {
-    return this.Http.delete(this.urlProviders + '/' + myObj['id'])
+    return this.Http.delete(environment.urlProviders + '/' + myObj['id'])
   }
 
   getProvider(id: any) {
-    return this.Http.get(this.urlProviders + '/' + id)
+    return this.Http.get(environment.urlProviders + '/' + id)
   }
 }
