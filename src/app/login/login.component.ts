@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -25,7 +26,12 @@ export class LoginComponent implements OnInit {
 
     this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
+
+        //solution sans refresh en se basant sur les variables du service
         this.router.navigate(['/listProvider']);
+        //solution avec refresh
+        ///window.location.href ="listProvider";
+
         this.invalidLogin = true;
       },
       error => { this.invalidLogin = true }

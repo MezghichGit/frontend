@@ -1,5 +1,5 @@
 
-<div align="right" *ngIf="loginService.isUserLoggedIn()" style="padding-right:20px; background-color:blanchedalmond;">You are : {{ name +" "+ lname}}, Connected as : {{user}}</div>
+<div align="right" *ngIf="loginService.isUserLoggedIn()" style="padding-right:20px; background-color:blanchedalmond;">You are : {{ loginService.sfname +" "+ loginService.slname}}, Connected as : {{loginService.susername}}</div>
 <br/>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Providers</a>
@@ -24,4 +24,4 @@
 <router-outlet></router-outlet>
 
 
-<div *ngIf="loginService.isUserLoggedIn()" align="center" style="background-color: aquamarine;">You are logged in as : {{userRole}}</div>
+<div *ngIf="loginService.isUserLoggedIn()" align="center" style="background-color: aquamarine;">You are logged in as : {{loginService.srole}}</div>

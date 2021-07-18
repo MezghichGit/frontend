@@ -6,17 +6,32 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+ /* static user: string =null;
+  static userRole :any=null;
+  static fname : any=null;
+  static lname : any=null;*/
 
-  constructor(public loginService: AuthenticationService) { }
-   user:any;
-   userRole :any;
-   name :any;
-   lname : any;
+    /*user: string =null;
+    userRole :any=null;
+    fname : any=null;
+    lname : any=null;*/
+
+  constructor(public loginService: AuthenticationService) {
+    /*this.user = sessionStorage.getItem('username');
+    this.userRole = sessionStorage.getItem('role');
+    this.fname = sessionStorage.getItem('name');
+    this.lname = sessionStorage.getItem('lname');*/
+  }
+
+
   ngOnInit(): void {
+    //
+    /*
     this.user = sessionStorage.getItem('username');
     this.userRole = sessionStorage.getItem('role');
-    this.name = sessionStorage.getItem('name');
+    this.fname = sessionStorage.getItem('name');
     this.lname = sessionStorage.getItem('lname');
+    */
   }
 
 }

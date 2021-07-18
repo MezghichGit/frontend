@@ -11,6 +11,7 @@ export class ListProviderComponent implements OnInit {
   constructor(private service: ProviderService, private router: Router) { }
 
   ngOnInit() {
+
     /*this.service.listProviders().subscribe(
       response => {
         this.providers = response;
@@ -29,6 +30,7 @@ export class ListProviderComponent implements OnInit {
     })
   }
   refreshListProviders() {
+
     this.service.listProviders().subscribe(
       response => {
         this.providers = response;
