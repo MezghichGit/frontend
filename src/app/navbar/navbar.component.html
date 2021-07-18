@@ -7,7 +7,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link" routerLink="/listProvider" *ngIf="loginService.isUserLoggedIn()"
         routerLinkActive="active">Liste</a>
-      <a class="nav-item nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn()"
+      <a class="nav-item nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn() && loginService.srole=='SuperAdmin'"
         routerLinkActive="active">Ajouter</a>
       <a class="nav-item nav-link" routerLink="/login" *ngIf="!loginService.isUserLoggedIn()"
         routerLinkActive="active">Login</a>

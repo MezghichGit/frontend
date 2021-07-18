@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from './../services/provider.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 @Component({
   selector: 'app-list-provider',
   templateUrl: './list-provider.component.html',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ListProviderComponent implements OnInit {
   providers: any;
-  constructor(private service: ProviderService, private router: Router) { }
+  constructor(public loginService: AuthenticationService, private service: ProviderService, private router: Router) { }
 
   ngOnInit() {
 
