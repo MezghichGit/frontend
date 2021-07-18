@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       data => {
 
         //solution sans refresh en se basant sur les variables du service
+        //this.router.navigate(['/listProvider']);
         this.router.navigate(['/listProvider']);
         //solution avec refresh
         ///window.location.href ="listProvider";
