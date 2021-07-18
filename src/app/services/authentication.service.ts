@@ -17,9 +17,12 @@ export class AuthenticationService {
         map(
           userData => {
             sessionStorage.setItem('username', username);
+            sessionStorage.setItem('name', userData["name"]);
+            sessionStorage.setItem('lname', userData["lastName"]);
+            sessionStorage.setItem('role', userData["temp"]);
             //sessionStorage.setItem('password', password);
             //console.log(username + " " + password);
-            //console.log(userData);
+            console.log(userData);
             let authString = 'Basic ' + btoa(username + ':' + password);
             sessionStorage.setItem('basicauth', authString);
             return userData;
@@ -41,6 +44,10 @@ export class AuthenticationService {
     return !(user === null)   // true or false
   }
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('name');
+    sessionStorage.removeItem('lname');
+    sessionStorage.removeItem('role');
+    sessionStorage.removeItem('basicauth');
   }
 }

@@ -22,8 +22,8 @@ password = sessionStorage.getItem('password');
 
 
   listProviders() {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username +':'+ this.password) });
-    return this.Http.get(environment.urlProviders + '/list',{ headers });
+    //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username +':'+ this.password) });
+    return this.Http.get(environment.urlProviders + '/list');
   }
 
 
@@ -41,17 +41,17 @@ password = sessionStorage.getItem('password');
 
 
   updateProvider(myObj: any) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+   // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
     return this.Http.put(environment.urlProviders + '/' + myObj['id'], myObj);
   }
 
   deleteProvider(myObj: any) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+  //  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
     return this.Http.delete(environment.urlProviders + '/' + myObj['id'])
   }
 
   getProvider(id: any) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+    //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
     return this.Http.get(environment.urlProviders + '/' + id)
   }
 }

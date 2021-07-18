@@ -1,10 +1,10 @@
+
+<div align="right" *ngIf="loginService.isUserLoggedIn()" style="padding-right:20px; background-color:blanchedalmond;">You are : {{ name +" "+ lname}}, Connected as : {{user}}</div>
+<br/>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Providers</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-
-
-
       <a class="nav-item nav-link" routerLink="/listProvider" *ngIf="loginService.isUserLoggedIn()"
         routerLinkActive="active">Liste</a>
       <a class="nav-item nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn()"
@@ -19,4 +19,9 @@
     </div>
   </div>
 </nav>
+
+
 <router-outlet></router-outlet>
+
+
+<div *ngIf="loginService.isUserLoggedIn()" align="center" style="background-color: aquamarine;">You are logged in as : {{userRole}}</div>
