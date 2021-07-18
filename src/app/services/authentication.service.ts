@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class AuthenticationService {
   authenticate(username, password) {
 
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username +':'+ password) });
-    return this.httpClient.get('http://localhost:8080/basicauth', { headers }).pipe
+    return this.httpClient.get(environment.urlAuth, { headers }).pipe
       (
         map(
           userData => {

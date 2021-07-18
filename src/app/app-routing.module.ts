@@ -6,13 +6,15 @@ import { LoginComponent } from './login/login.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthgaurdService } from './services/authgaurd.service';
+import { RegistrationComponent } from './registration/registration.component';
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "app-navbar" },
   { path: "listProvider", component: ListProviderComponent, canActivate: [AuthgaurdService] },
   { path: "addProvider", component: AddProviderComponent, canActivate: [AuthgaurdService] },
   { path: "updateProvider/:id", component: UpdateProviderComponent, canActivate: [AuthgaurdService] },
   { path: "login", component: LoginComponent },
-  { path: "logout", component: LogoutComponent, canActivate: [AuthgaurdService] }
+  { path: "logout", component: LogoutComponent, canActivate: [AuthgaurdService] },
+  { path: 'registration', component: RegistrationComponent },
 ];
 
 @NgModule({

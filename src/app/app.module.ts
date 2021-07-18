@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {BasicAuthInterceptorService} from './services/basic-auth-interceptor.service'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ListProviderComponent,
     UpdateProviderComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
